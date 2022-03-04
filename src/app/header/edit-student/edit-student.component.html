@@ -1,0 +1,62 @@
+<div class="modal-header" *ngIf="FormName == 'studentForm'">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="activeModal.close()">
+      <div aria-hidden="true">&times;</div>
+    </button>
+  
+    <h5 class="modal-title" >
+        <i class="fa-solid fa-user-pen"></i>
+      Edit User
+    </h5>
+    <!-- <h5 class="modal-title" *ngIf="statusCheck == 'Editrestuser'">
+      <i class="far fa-sticky-note"></i>
+      Edit Restaurant User
+    </h5> -->
+  </div>
+<div class="modal-body BG p-0 rounded-10">
+    <form #studentForm="ngForm"  (ngSubmit)="updateUser(studentForm.value); studentForm.reset()">
+        <div class="card-body mt-4">
+            <div class="row ">
+        <!-- <div class="form-group">
+            <label for="exampleInputId">Id</label>
+            <input type="text" ngModel name="id" class="form-control" id="exampleInputId" placeholder="Id">
+          </div> -->
+        <div class="form-group wrap">
+          <label for="exampleInputName name">Name</label>
+          <input type="email" #name= "ngModel" name="name" [(ngModel)]="rows.name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter Name"
+          >
+         
+        </div>
+        <!-- <input  ngbTooltip="Last Name Required" triggers="manual"  invalidTooltip  type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required /> -->
+        <div class="form-group wrap">
+          <label for="exampleInputf.Name name">UserName</label>
+          <input type="text" #username="ngModel" name="Username"  class="form-control" id="exampleInputf.Name" placeholder="UserName" [(ngModel)]="rows.username">
+         
+        </div>
+        <div class="form-group wrap">
+            <label for="exampleInputSemester name">Email</label>
+            <input type="text" #email="ngModel" name="email" class="form-control" id="exampleInputSemester" placeholder="Semester" [(ngModel)]="rows.email">            
+          </div>
+          
+    </div>
+</div>
+
+      <div class="modal-footer NotBG">
+        <button type="button" class="btn btn-outline-secondary noHover" data-dismiss="modal"
+          (click)="activeModal.close()">
+          Close
+        </button>
+        <button class="btn btn-primary" (click)="msg()">Update</button>
+         <!-- <button class="btn button-save" type="submit" *ngIf="statusCheck == 'addrestuser'"
+          (click)="onSubmit('addrestuserSave')">
+       add 
+        </button>
+        <button class="btn button-save" type="submit" *ngIf="statusCheck == 'Editrestuser'"
+          (click)="onSubmit('editrestuserSave')">
+          Update 
+        </button> -->
+       
+      </div>
+  
+    </form>
+
+

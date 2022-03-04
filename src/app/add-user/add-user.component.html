@@ -1,0 +1,53 @@
+<div class="container ">
+    <div *ngIf="alert" class="alert alert-success alert-dismissible" role="alert">
+        <strong>Hy!</strong> User entered Successfully.
+        <button type="button" (click)="alertClose()" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+    <form #studentForm="ngForm"  (ngSubmit)="addUser(studentForm.value); studentForm.reset()">
+        <div class="card-body mt-4">
+            <div class="row ">
+        <!-- <div class="form-group">
+            <label for="exampleInputId">Id</label>
+            <input type="text" ngModel name="id" class="form-control" id="exampleInputId" placeholder="Id">
+          </div> -->
+        <div class="form-group wrap">
+          <label for="exampleInputName name">Name</label>
+          <input type="email" #name= "ngModel" name="name" [(ngModel)]="rows.name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter Name"
+          [ngClass]="{'is-invalid':name.invalid && name.touched}" required>
+          <span  class="invalid-tooltip ">
+            Required
+          </span>
+        </div>
+        <!-- <input  ngbTooltip="Last Name Required" triggers="manual"  invalidTooltip  type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required /> -->
+        <div class="form-group wrap">
+          <label for="exampleInputf.Name name">UserName</label>
+          <input type="text" #username="ngModel" name="Username"  class="form-control" id="exampleInputf.Name" placeholder="UserName" [(ngModel)]="rows.username"   [ngClass]="{'is-invalid':username.invalid && username.touched}" required>
+          <span  class="invalid-tooltip ">
+            Required
+          </span>
+        </div>
+        <div class="form-group wrap">
+            <label for="exampleInputSemester name">Email</label>
+            <input type="text" #email="ngModel" name="email" class="form-control" id="exampleInputSemester" placeholder="Semester" [(ngModel)]="rows.email"   [ngClass]="{'is-invalid':email.invalid && email.touched}" required>
+            <span  class="invalid-tooltip ">
+              Required
+            </span>
+          </div>
+          <div class="form-group wrap">
+            <label for="exampleInputAddress name">Address</label>
+            <input type="text"  name="address" class="form-control" id="exampleInputAddress" placeholder="enter address" [(ngModel)]="rows.address" #address="ngModel"  [ngClass]="{'is-invalid':address.invalid && address.touched}" required>
+            <span  class="invalid-tooltip ">
+              Required
+            </span>
+          </div>
+         <div class="mt-2">
+        <button class="btn btn-primary" [disabled]="studentForm.invalid" >AddUser</button>
+        </div>
+    </div>
+    </div>
+    </form>
+</div>
+

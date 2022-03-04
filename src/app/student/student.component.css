@@ -1,0 +1,19 @@
+.container{
+    background-color: #efefef;
+    border-radius: 0.3rem;
+    border-radius: 4px;
+    /* box-shadow:rgba(0, 0, 0, 0.08) 0px 1px 8px; */
+   margin-top: 10px;
+}
+.fa-edit{
+    color:blue;
+    font-size: 20px;
+}
+.fa-trash{
+    color:red;
+    font-size: 20px;
+    cursor: pointer;
+}
+a{
+    text-decoration: no;
+}

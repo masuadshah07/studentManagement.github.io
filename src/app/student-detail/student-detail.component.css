@@ -1,0 +1,9 @@
+.container{
+    background-color: #efefef;
+    border-radius: 0.3rem;
+    border-radius: 4px;
+    box-shadow:rgba(0, 0, 0, 0.08) 0px 1px 8px;
+   margin: 60px auto;
+   /* width: 500px; */
+   
+}

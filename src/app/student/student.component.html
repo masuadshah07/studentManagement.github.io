@@ -1,0 +1,73 @@
+<div class="container">
+<div class="card card-default">
+    <div class="row mt-2">   
+    <div class="content-heading col-lg-10">    
+        <h2>Students Record</h2>    
+    </div> 
+    <div class="col-md-2">
+        <button class="btn btn-outline-success"  (click)="add('adduser','studentForm')">AddUser</button>
+    </div> 
+</div>   
+    <div class="card-body">    
+       
+        <ngx-datatable class='bootstrap no-detail-row' [columnMode]="'force'" [footerHeight]="50" [rowHeight]="'auto'"    
+            [rows]='rows' [columns]="columns" [count]="totalCount" [reorderable]="reorderable">    
+            <ngx-datatable-column name="id" prop="id">
+                <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                    {{row.id}}
+                  </ng-template> 
+            </ngx-datatable-column>    
+            <ngx-datatable-column name="name" prop="name">
+                <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                    <a routerLink="/student-detail/{{row.id}}">{{row.name}}</a>
+                  </ng-template>
+            </ngx-datatable-column>    
+            <ngx-datatable-column name="username" prop="username">
+                <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                    {{row.username}}
+                  </ng-template>
+            </ngx-datatable-column>    
+            <ngx-datatable-column name="email" prop="email">
+                <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                    {{row.email}}
+                  </ng-template>
+            </ngx-datatable-column>    
+            <!-- <ngx-datatable-column name="address" prop="address">
+                <ng-template let-row="row" let-value="value" let-i="index" ngx-datatable-cell-template>
+
+                 
+                        <strong> street:  </strong>{{row.address.street }}
+                        <strong> suite:  </strong>{{row.address.suite }}
+                        <strong> city:  </strong>{{row.address.city }}
+
+                        <strong> lat:  </strong>{{row.address.geo.lat }}
+                        
+                        <br />
+                    </ng-template>
+    
+                </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column #toppingTemplate name="Toppings" prop="topping">
+                    <ng-template let-row="row" let-value="value" let-i="index" ngx-datatable-cell-template>
+                        <ng-template ngFor let-obj [ngForOf]="value">
+                            <strong > ID: {{ obj.id }} </strong>
+                            <span>Type: {{ obj.type }}</span>
+                            <br />
+                        </ng-template>
+                    </ng-template>
+                </ngx-datatable-column> -->
+                 
+            <ngx-datatable-column name="Action" widht="600">    
+                <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>    
+                    <div class="text-left"> 
+                        <!-- <a title="Edit" class="mr-2" color="primary" href="javascript:void(0);">Edit</a>     -->
+                        <!-- <a title="Delete" color="danger" href="javascript:void(0);">Delete</a>     -->
+                       <a routerLink="/update/{{row.id}}"> <i class="fa fa-edit"></i></a>  
+                      <i class="fa fa-trash"  (click)="deleteUser(row.id)"></i>   
+                    </div>    
+                    <!-- <button type="button" class="btn editIconBack px-1 py-1"><i class="far fa-edit">edit</i></button> -->
+                </ng-template>    
+            </ngx-datatable-column>    
+        </ngx-datatable>    
+    </div>    
+</div>   
+</div> 

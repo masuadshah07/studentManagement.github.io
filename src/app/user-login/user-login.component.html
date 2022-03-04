@@ -1,0 +1,92 @@
+<section class="login-block">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-4 login-sec">
+		    <h2 class="text-center">{{loginMode? 'logIn':'signUp'}} into <span>Student Management System</span></h2>
+		    <form class="login-form" #userlogin="ngForm"    (ngSubmit)="onSubmit()">
+  <!-- <div class="form-group">
+    <label for="exampleInputuserName" >UserName</label>
+    <input type="text" class="form-control" placeholder="userName ">
+    
+  </div> -->
+  <div class="form-group input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" >
+        <i class="fa fa-envelope"></i></span>
+    </div>
+    <input type="text" class="form-control" placeholder="email" email aria-label="email" name="email" aria-describedby="basic-addon1" #email="ngModel" [(ngModel)]="rows.email"  [ngClass]="{'is-invalid':email.invalid && email.touched}" required>
+    <span  class="invalid-tooltip">
+      Required
+    </span>
+  </div>
+  <div class="form-group input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" >
+        <i class="fa fa-lock"></i></span>
+    </div>
+    <input type="password" minlength="4" class="form-control" placeholder="password" aria-label="password" name="password" #password="ngModel" [(ngModel)]="rows.password" aria-describedby="basic-addon1" [ngClass]="{'is-invalid':password.invalid && password.touched}" required>
+    <span  class="invalid-tooltip">
+      Required
+    </span>
+  </div>
+  
+  
+    <div class="form-check">
+    <!-- <label class="form-check-label"> -->
+      <!-- <input type="checkbox" class="form-check-input"> -->
+      <!-- <small>Remember Me</small> -->
+      
+      <p>{{loginMode? 'Don`t have Account?':'Already have Account?'}}<a href="#" (click)="onSwitchMode()">
+        {{loginMode? 'Create One':'Sign in'}}
+      </a></p>
+      <a href="#">Forgot your password?</a>
+    <!-- </label> -->
+   
+    <button type="submit" focus="email" (click)="go()"  [disabled]="!userlogin.valid" class="btn btn-login float-right">{{loginMode? 'Sign In':'Create One'}}</button>
+  </div>
+  
+</form>
+<div class="copy-text">Created with <i class="fa fa-heart"></i> by Shah</div>
+		</div>
+		<div class="col-md-8 banner-sec">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                 <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+            <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h3>Student Management System</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>	
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h3>Student Management System</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>	
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h3>Student Management System</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>	
+    </div>
+  </div>
+            </div>	   
+		    
+		</div>
+	</div>
+</div>
+    </div>
+</section>

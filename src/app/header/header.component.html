@@ -1,0 +1,188 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Student Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="header">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="/form">Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <i class="fa fa-sign-out" (click)="signOut()"></i>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search" (keyup)='updateFilter($event)' >
+          <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+  <div class="row d-block mb-2">
+    <div class="card card-dark shadow">
+        <div class="card-header card-header-hd py-2 bordert-lr">
+  
+          <div class="row">
+  
+            <div class="col-lg-10 ">
+              <h2 class="p-heading font-weight-light m-0">Student List</h2>
+  
+            </div>
+  
+            <!-- <div class="col-lg-2 ">
+  
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Full Name" (keyup)='updateFilter($event)'>
+                <div class="input-group-append">
+                  <button class="btn dinfo" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+          </div> -->
+        <div class=" col-lg-1">
+          <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add User" (click)="add('addStudent','studentForm')"><i class="fa fa-user"></i> Add Student</button>
+  
+  
+        </div>
+         
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- <div class="container"> -->
+    <!-- <div class="card card-default">
+        <div class="row mt-2">   
+        <div class="content-heading col-lg-10">    
+            <h2>Students Record</h2>    
+        </div> 
+        <div class="col-md-2">
+            <button class="btn btn-outline-success"  (click)="add()">AddUser</button>
+        </div> 
+    </div>    -->
+    <!-- <div class="row mt-2">   
+      <div class="content-heading col-lg-10">    
+          <h2>Students Record</h2>    
+      </div> 
+      <div class="col-md-2 mt-2">
+          <button class="btn btn-outline-success"  (click)="add('addStudent','studentForm')">AddUser</button>
+      </div> 
+  </div> -->
+        <!-- <div class="card-body">    
+           
+            <ngx-datatable class='bootstrap no-detail-row' [columnMode]="'force'" [footerHeight]="50" [rowHeight]="'auto'"    
+                [rows]='rows' [columns]="columns" [count]="totalCount" [reorderable]="reorderable">    
+                <ngx-datatable-column name="id" prop="id">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{row.id}}
+                      </ng-template> 
+                </ngx-datatable-column>    
+                <ngx-datatable-column name="name" prop="name">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <a   routerLink="/student-detail/{{row.id}}">{{row.name}}</a>
+                      </ng-template>
+                </ngx-datatable-column>    
+                <ngx-datatable-column name="username" prop="username">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{row.username}}
+                      </ng-template>
+                </ngx-datatable-column>    
+                <ngx-datatable-column name="email" prop="email">
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{row.email}}
+                      </ng-template>
+                </ngx-datatable-column>     -->
+                <!-- <ngx-datatable-column name="address" prop="address">
+                    <ng-template let-row="row" let-value="value" let-i="index" ngx-datatable-cell-template>
+                     
+                            <strong> street:  </strong>{{row.address.street }}
+                            <strong> suite:  </strong>{{row.address.suite }}
+                            <strong> city:  </strong>{{row.address.city }}
+    
+                            <strong> lat:  </strong>{{row.address.geo.lat }}
+                            
+                            <br />
+                        </ng-template>
+        
+                    </ngx-datatable-column> -->
+                    <!-- <ngx-datatable-column #toppingTemplate name="Toppings" prop="topping">
+                        <ng-template let-row="row" let-value="value" let-i="index" ngx-datatable-cell-template>
+                            <ng-template ngFor let-obj [ngForOf]="value">
+                                <strong > ID: {{ obj.id }} </strong>
+                                <span>Type: {{ obj.type }}</span>
+                                <br />
+                            </ng-template>
+                        </ng-template>
+                    </ngx-datatable-column> -->
+                     
+                <!-- <ngx-datatable-column name="Action" widht="600">    
+                    <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>    
+                        <div class="text-left">  -->
+                            <!-- <a title="Edit" class="mr-2" color="primary" href="javascript:void(0);">Edit</a>     -->
+                            <!-- <a title="Delete" color="danger" href="javascript:void(0);">Delete</a>     -->
+                           <!-- <a routerLink="/update/{{row.id}}"> <i class="fa fa-edit"></i></a>  
+                          <i class="fa fa-trash"  (click)="deleteUser(row.id)"></i>   
+                        </div>     -->
+                        <!-- <button type="button" class="btn editIconBack px-1 py-1"><i class="far fa-edit">edit</i></button>
+                    </ng-template>    
+                </ngx-datatable-column>    
+            </ngx-datatable>    
+        </div>    
+    </div> -->
+
+
+    <div class="panel-body">
+  
+      <ngx-datatable #myTable class="material" [columns]="columns" [rows]="rows" [columnMode]="'force'"
+        [headerHeight]="50" [footerHeight]="50" [sorts]="[{prop: 'autoEnquiryNumber', dir: 'desc'}]"
+        [rowHeight]="'auto'" [limit]="6" [rowClass]="getRowClass">
+  
+        <ngx-datatable-column name="id" [width]="50" prop="autoEnquiryNumber">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{row.id}}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Name" [width]="80" prop="name">
+          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+            <a   routerLink="/student-detail/{{row.id}}">{{row.name}}</a>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="UserName" [width]="50" prop="username">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{row.username}}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Email" [width]="50" prop="email">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{row.email}}
+          </ng-template>
+        </ngx-datatable-column>
+        
+       
+        <ngx-datatable-column name="Action" [width]="80" [sortable]="false">  
+          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+              
+            <button type="button" class="btn editIconBack px-1 py-1"  title=""
+                data-original-title="Edit"><i class="far fa-edit" (click)="editStudent(row,'editStudent','studentForm')" ></i></button>
+               
+              <button type="button" class="btn deleteIconBack px-1 py-1"  title=""
+                data-original-title="Delete"> <i class="far fa-trash-alt" (click)="deleteUser(row)"></i></button>
+            <!-- </div> -->
+  
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+  
+    </div>
+
+

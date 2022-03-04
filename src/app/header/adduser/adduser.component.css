@@ -1,0 +1,87 @@
+
+.modal-title {
+    text-align: center !important;
+    align-items: center !important;
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0px 15px 0px 15px;
+    /* background-color: #505050; */
+  }
+  .BG {
+    background-color: #f8fafb !important;
+  }
+  .modal-body {
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important;
+    }
+    .modal-footer {
+        background-color: #343a40 !important;
+    }
+    /* label:not(.form-check-label):not(.custom-file-label) {
+        font-weight: 500 !important;
+        color: #505050 !important;
+      } */
+
+      .button-save{
+          color: #ffffff;
+      }
+
+      input.ng-invalid.ng-touched{
+        border: 1px solid red;
+        /* box-shadow: 0 0 13px inset hsla(0, 71%, 53%, 0.993); */
+      }
+      input.ng-valid.ng-touched{
+        border: 1px solid blue
+      }
+      /* ng-select.ng-invalid.ng-touched{
+        border: 1px solid red;
+      
+      } */
+      /* ng-select.ng-touched{
+        border: 1px solid blue
+      } */
+      
+      
+    
+      .invalid-tooltip::after {
+        content: " ";
+        position: absolute;
+        top: 100%; /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(238, 20, 20) transparent transparent transparent;
+      }
+      .wrap{
+          display: block;
+          clear: both;
+      }
+     
+      .wrap .name {
+        float:left;
+        
+    }
+    .wrap .invalid-tooltip {
+        float: right;
+        position: relative;
+        top: -68px;
+        width: 60px;
+        font-size: 11px;
+        border-radius: 10px;
+    }
+    .modal-header {
+        display: block !important;
+        padding: 10px 8px !important;
+        background-color: #343a40;
+      }
+      .modal-header {
+        border-top-left-radius: calc(10px - 1px) !important;
+        border-top-right-radius: calc(10px - 1px) !important;
+      }
+      .close, .mailbox-attachment-close {
+        color: skyblue !important;
+        text-shadow: 0 1px 0 #000000 !important;
+      }
